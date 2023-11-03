@@ -3,6 +3,7 @@ from scheduling_algorithms import FCFS, SJF, SRTF, RR
 
 # Function to output the calculated waiting times
 def outputWaitingTimes(waiting_times, n):
+    waiting_times.sort(key=lambda x: x.get_id())
     sum = 0
     for process in waiting_times:
         print(process)
@@ -23,9 +24,6 @@ processes = []
 for i in range(n):
     id, at, bt = input().split(" ")
     processes.append(Process(int(id), int(at), int(bt)))
-
-# Sort processes by arrival time
-processes.sort(key=lambda x: x.get_id()) 
 
 # Algorithm
 waiting_times = []

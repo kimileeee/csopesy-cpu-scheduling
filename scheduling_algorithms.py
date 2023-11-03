@@ -2,6 +2,9 @@ import copy
 
 # Function to implement FCFS scheduling
 def FCFS(processes):
+    # Sort processes by arrival time
+    processes.sort(key=lambda x: x.get_arrival_time()) 
+
     waiting_times = []
     prev_end_time = processes[0].get_arrival_time()
     
@@ -14,17 +17,12 @@ def FCFS(processes):
         process.set_waiting_time(start_time - process.get_arrival_time())
         
         prev_end_time = end_time
-
         waiting_times.append(process)
 
     return waiting_times
 
 def SJF(processes):
-    waiting_times = []
-
     pass
-
-    return waiting_times
 
 # Function to implement SRTF scheduling
 def SRTF(processes):
