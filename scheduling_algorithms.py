@@ -19,6 +19,13 @@ def FCFS(processes):
 
     return waiting_times
 
+def SJF(processes):
+    waiting_times = []
+
+    pass
+
+    return waiting_times
+
 # Function to implement SRTF scheduling
 def SRTF(processes):
     waiting_times = []
@@ -69,4 +76,11 @@ def SRTF(processes):
     else:
         ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_previous_end_time())
     waiting_times.append(copy.deepcopy(ongoing_process))
+    return waiting_times
+
+def RR(processes, q):
+    waiting_times = []
+
+    pass
+
     return waiting_times
