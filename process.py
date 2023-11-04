@@ -66,3 +66,12 @@ class Process:
 
     def decrement_remaining_time(self):
         self.remaining_time -= 1
+
+    def set_remaining_time(self, remaining_time):
+        self.remaining_time = remaining_time
+
+    def set_waiting_time_intervals(self):
+        if self.previous_end_time == 0:
+            self.waiting_time = self.start_time - self.arrival_time
+        else:
+            self.waiting_time = self.start_time - self.previous_end_time

@@ -21,8 +21,33 @@ def FCFS(processes):
 
     return waiting_times
 
+# Function to implement SJF scheduling
 def SJF(processes):
-    pass
+    waiting_times = []
+    current_time = 0
+
+    while processes:
+        ready_processes = [p for p in processes if p.get_arrival_time() <= current_time]
+        if ready_processes:
+            ready_processes.sort(key=lambda x: x.get_burst_time())
+            current_process = ready_processes[0]
+
+            if current_process.get_start_time() == 0:
+                current_process.set_start_time(current_time)
+
+            end_time = current_time + current_process.get_burst_time()
+            current_process.set_end_time(end_time)
+            current_process.set_waiting_time(current_process.get_start_time() - current_process.get_arrival_time())
+
+            waiting_times.append(current_process)
+            current_time = end_time
+            processes.remove(current_process)
+
+        else:
+            current_time += 1
+
+    return waiting_times
+
 
 # Function to implement SRTF scheduling
 def SRTF(processes):
@@ -76,9 +101,41 @@ def SRTF(processes):
     waiting_times.append(copy.deepcopy(ongoing_process))
     return waiting_times
 
-def RR(processes, q):
+# Function to implement RR scheduling
+def RR(processes, quantum):
     waiting_times = []
+    current_time = 0
+    queue = []
 
-    pass
+    while processes or queue:
+        if processes:
+            processes.sort(key=lambda x: x.get_arrival_time())
+            for process in processes:
+                if process.get_arrival_time() <= current_time:
+                    idx = next((i for i, other in enumerate(queue) if process.get_arrival_time() < other.get_previous_end_time()), len(queue))
+                    queue.insert(idx, process)
+                    processes.remove(process)
+
+        if queue:
+            current_process = queue.pop(0)
+            current_process.set_start_time(current_time)
+
+            if current_process.get_remaining_time() <= quantum:
+                current_time += current_process.get_remaining_time()
+                current_process.set_remaining_time(0)
+
+            else:
+                current_time += quantum
+                current_process.set_remaining_time(current_process.get_remaining_time() - quantum)
+                queue.append(current_process)
+
+            current_process.set_end_time(current_time)
+            current_process.set_waiting_time_intervals()
+            
+            waiting_times.append(copy.deepcopy(current_process))
+            current_process.set_previous_end_time(current_time)
+
+        else:
+            current_time += 1
 
     return waiting_times
