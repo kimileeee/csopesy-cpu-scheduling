@@ -57,10 +57,7 @@ def SRTF(processes):
                 if ongoing_process != process_to_execute:
                     # context switch
                     ongoing_process.set_end_time(current_time)
-                    if ongoing_process.get_previous_end_time() == 0:
-                        ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_arrival_time())
-                    else:
-                        ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_previous_end_time())
+                    ongoing_process.set_waiting_time_intervals()
                     waiting_times.append(copy.deepcopy(ongoing_process))
                     
                     ongoing_process.set_previous_end_time(current_time)
@@ -74,10 +71,7 @@ def SRTF(processes):
         current_time += 1
 
     ongoing_process.set_end_time(current_time-1)
-    if ongoing_process.get_previous_end_time() == 0:
-        ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_arrival_time())
-    else:
-        ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_previous_end_time())
+    ongoing_process.set_waiting_time_intervals()
     waiting_times.append(copy.deepcopy(ongoing_process))
     return waiting_times
 
@@ -115,10 +109,7 @@ def RR(processes, q):
                 queue.append(ongoing_process)
             
             ongoing_process.set_end_time(current_time)
-            if ongoing_process.get_previous_end_time() == 0:
-                ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_arrival_time())
-            else:
-                ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_previous_end_time())
+            ongoing_process.set_waiting_time_intervals()
 
             waiting_times.append(copy.deepcopy(ongoing_process))
             ongoing_process.set_previous_end_time(current_time)
