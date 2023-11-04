@@ -9,11 +9,6 @@ class Process:
         self.remaining_time = burst_time
         self.previous_end_time = 0
 
-    def __lt__(self, other):
-        if self.burst_time == other.burst_time:
-            return self.arrival_time < other.arrival_time
-        return self.burst_time < other.burst_time
-
     def __str__(self):
         return f"{self.process_id} start time: {self.start_time} end time: {self.end_time} | Waiting time: {self.waiting_time}"
 
@@ -63,6 +58,9 @@ class Process:
 
     def set_waiting_time(self, waiting_time):
         self.waiting_time = waiting_time
+
+    def set_remaining_time(self, remaining_time):
+        self.remaining_time = remaining_time
 
     def decrement_remaining_time(self):
         self.remaining_time -= 1

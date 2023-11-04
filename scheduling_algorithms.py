@@ -1,6 +1,6 @@
 import copy
 
-# Function to implement FCFS scheduling
+# Function to implement First Come First Serve scheduling
 def FCFS(processes):
     # Sort processes by arrival time
     processes.sort(key=lambda x: x.get_arrival_time()) 
@@ -21,10 +21,15 @@ def FCFS(processes):
 
     return waiting_times
 
+# Function to implement Shortest Job First scheduling
 def SJF(processes):
+    waiting_times = []
+    
     pass
 
-# Function to implement SRTF scheduling
+    return waiting_times
+
+# Function to implement Shortest Remaining Time First scheduling
 def SRTF(processes):
     waiting_times = []
     current_time = 0
@@ -76,9 +81,49 @@ def SRTF(processes):
     waiting_times.append(copy.deepcopy(ongoing_process))
     return waiting_times
 
+# Function to implement Round Robin scheduling
 def RR(processes, q):
-    waiting_times = []
+    # Sort processes by arrival time
+    processes.sort(key=lambda x: x.get_arrival_time())
 
-    pass
+    queue = []
+    waiting_times = []
+    current_time = 0
+    ongoing_process = None
+
+    while True: 
+        if not processes and not queue:
+            break
+
+        for process in processes:
+            if process.get_arrival_time() <= current_time:
+                # Insert process into queue based on arrival time vs the previous end time of the process in the queue
+                idx = next((i for i, other in enumerate(queue) if process.get_arrival_time() < other.get_previous_end_time()), len(queue))
+                queue.insert(idx, process)
+                processes.remove(process)
+
+        if queue:
+            ongoing_process = queue.pop(0)
+            ongoing_process.set_start_time(current_time)
+
+            if ongoing_process.get_remaining_time() <= q:
+                current_time += ongoing_process.get_remaining_time()
+                ongoing_process.set_remaining_time(0)
+            else:
+                current_time += q
+                ongoing_process.set_remaining_time(ongoing_process.get_remaining_time() - q)
+                queue.append(ongoing_process)
+            
+            ongoing_process.set_end_time(current_time)
+            if ongoing_process.get_previous_end_time() == 0:
+                ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_arrival_time())
+            else:
+                ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_previous_end_time())
+
+            waiting_times.append(copy.deepcopy(ongoing_process))
+            ongoing_process.set_previous_end_time(current_time)
+        
+        else:
+            current_time += 1
 
     return waiting_times
