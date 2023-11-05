@@ -110,13 +110,18 @@ def RR(processes, quantum):
 
     while processes or queue:
         if processes:
+            to_remove = []
             processes.sort(key=lambda x: x.get_arrival_time())
             for process in processes:
                 if process.get_arrival_time() <= current_time:
-                    idx = next((i for i, other in enumerate(queue) if process.get_arrival_time() < other.get_previous_end_time()), len(queue))
+                    idx = next((i for i, other in enumerate(queue) if process.get_arrival_time() <= other.get_previous_end_time()), len(queue))
                     queue.insert(idx, process)
-                    processes.remove(process)
-
+                    to_remove.append(process)
+        
+            for x in to_remove:
+                processes.remove(x)
+        print("Queue: ", end="")
+        print([p.get_id() for p in queue])
         if queue:
             current_process = queue.pop(0)
             current_process.set_start_time(current_time)
