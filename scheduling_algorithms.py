@@ -72,8 +72,9 @@ def SRTF(processes):
             if ongoing_process == None:
                 ongoing_process = process_to_execute
                 ongoing_process.set_start_time(current_time)
+                ongoing_process.decrement_remaining_time()
 
-            else:
+            else:                    
                 if ongoing_process != process_to_execute:
                     # context switch
                     ongoing_process.set_end_time(current_time)
@@ -82,7 +83,7 @@ def SRTF(processes):
                     else:
                         ongoing_process.set_waiting_time(ongoing_process.get_start_time() - ongoing_process.get_previous_end_time())
                     waiting_times.append(copy.deepcopy(ongoing_process))
-                    
+
                     ongoing_process.set_previous_end_time(current_time)
                     ongoing_process = process_to_execute
                     ongoing_process.set_start_time(current_time)
@@ -90,7 +91,7 @@ def SRTF(processes):
                 ongoing_process.decrement_remaining_time()
                 if ongoing_process.get_remaining_time() == 0:
                     is_done[ongoing_process.get_id()] = True
-                
+              
         current_time += 1
 
     ongoing_process.set_end_time(current_time-1)
