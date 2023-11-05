@@ -120,8 +120,7 @@ def RR(processes, quantum):
         
             for x in to_remove:
                 processes.remove(x)
-        print("Queue: ", end="")
-        print([p.get_id() for p in queue])
+
         if queue:
             current_process = queue.pop(0)
             current_process.set_start_time(current_time)
