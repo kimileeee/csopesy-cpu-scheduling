@@ -1,0 +1,49 @@
+CPU Scheduling Algorithm
+0 First Come First Serve
+1 Shortest Job First
+2 Shortest Remaining Time First
+3 Round Robin
+1 start time: 0 end time: 5 | Waiting time: 0
+1 start time: 15 end time: 20 | Waiting time: 10
+1 start time: 39 end time: 44 | Waiting time: 19
+1 start time: 69 end time: 74 | Waiting time: 25
+1 start time: 99 end time: 104 | Waiting time: 25
+1 start time: 129 end time: 134 | Waiting time: 25
+1 start time: 159 end time: 162 | Waiting time: 25
+2 start time: 5 end time: 10 | Waiting time: 1
+2 start time: 25 end time: 26 | Waiting time: 15
+3 start time: 10 end time: 15 | Waiting time: 6
+3 start time: 26 end time: 31 | Waiting time: 11
+3 start time: 54 end time: 59 | Waiting time: 23
+3 start time: 84 end time: 89 | Waiting time: 25
+3 start time: 114 end time: 119 | Waiting time: 25
+3 start time: 144 end time: 149 | Waiting time: 25
+3 start time: 168 end time: 173 | Waiting time: 19
+3 start time: 188 end time: 189 | Waiting time: 15
+4 start time: 20 end time: 25 | Waiting time: 11
+4 start time: 44 end time: 49 | Waiting time: 19
+4 start time: 74 end time: 79 | Waiting time: 25
+4 start time: 104 end time: 109 | Waiting time: 25
+4 start time: 134 end time: 139 | Waiting time: 25
+4 start time: 162 end time: 163 | Waiting time: 23
+5 start time: 31 end time: 34 | Waiting time: 15
+6 start time: 34 end time: 39 | Waiting time: 14
+6 start time: 64 end time: 69 | Waiting time: 25
+6 start time: 94 end time: 99 | Waiting time: 25
+6 start time: 124 end time: 129 | Waiting time: 25
+6 start time: 154 end time: 159 | Waiting time: 25
+6 start time: 178 end time: 183 | Waiting time: 19
+7 start time: 49 end time: 54 | Waiting time: 20
+7 start time: 79 end time: 84 | Waiting time: 25
+7 start time: 109 end time: 114 | Waiting time: 25
+7 start time: 139 end time: 144 | Waiting time: 25
+7 start time: 163 end time: 168 | Waiting time: 19
+7 start time: 183 end time: 188 | Waiting time: 15
+7 start time: 190 end time: 195 | Waiting time: 2
+8 start time: 59 end time: 64 | Waiting time: 27
+8 start time: 89 end time: 94 | Waiting time: 25
+8 start time: 119 end time: 124 | Waiting time: 25
+8 start time: 149 end time: 154 | Waiting time: 25
+8 start time: 173 end time: 178 | Waiting time: 19
+8 start time: 189 end time: 190 | Waiting time: 11
+Average waiting time: 104.125

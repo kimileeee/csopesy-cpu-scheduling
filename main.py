@@ -21,28 +21,30 @@ print("3 Round Robin")
 # Input
 algo, n, q = [int(x) for x in input().split(" ")]
 processes = []
-for i in range(n):
-    id, at, bt = input().split(" ")
-    processes.append(Process(int(id), int(at), int(bt)))
+if n>=3 and n<=100:
+    for i in range(n):
+        id, at, bt = input().split(" ")
+        processes.append(Process(int(id), int(at), int(bt)))
 
-# Algorithm
-waiting_times = []
-if algo == 0: 
-    waiting_times = FCFS(processes)
+    # Algorithm
+    waiting_times = []
+    if algo == 0: 
+        waiting_times = FCFS(processes)
 
-elif algo == 1: 
-    waiting_times = SJF(processes)
+    elif algo == 1: 
+        waiting_times = SJF(processes)
 
-elif algo == 2: 
-    waiting_times = SRTF(processes)
-    
-elif algo == 3: 
-    waiting_times = RR(processes, q)
+    elif algo == 2: 
+        waiting_times = SRTF(processes)
+        
+    elif algo == 3: 
+        waiting_times = RR(processes, q)
 
+    else:
+        print("Invalid input")
+
+    # Output
+    if waiting_times:
+        outputWaitingTimes(waiting_times, n)
 else:
-    print("Invalid input")
-
-# Output
-if waiting_times:
-    outputWaitingTimes(waiting_times, n)
-    
+    print("Invalid number of processes")

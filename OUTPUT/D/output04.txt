@@ -1,0 +1,22 @@
+CPU Scheduling Algorithm
+0 First Come First Serve
+1 Shortest Job First
+2 Shortest Remaining Time First
+3 Round Robin
+1 start time: 1 end time: 60 | Waiting time: 0
+2 start time: 341 end time: 406 | Waiting time: 340
+3 start time: 188 end time: 230 | Waiting time: 183
+4 start time: 70 end time: 81 | Waiting time: 61
+5 start time: 540 end time: 615 | Waiting time: 528
+6 start time: 230 end time: 281 | Waiting time: 212
+7 start time: 615 end time: 696 | Waiting time: 587
+8 start time: 783 end time: 871 | Waiting time: 753
+9 start time: 406 end time: 471 | Waiting time: 368
+10 start time: 60 end time: 70 | Waiting time: 9
+11 start time: 148 end time: 188 | Waiting time: 94
+12 start time: 471 end time: 540 | Waiting time: 413
+13 start time: 696 end time: 783 | Waiting time: 632
+14 start time: 114 end time: 148 | Waiting time: 43
+15 start time: 81 end time: 114 | Waiting time: 6
+16 start time: 281 end time: 341 | Waiting time: 196
+Average waiting time: 276.5625

@@ -1,0 +1,71 @@
+CPU Scheduling Algorithm
+0 First Come First Serve
+1 Shortest Job First
+2 Shortest Remaining Time First
+3 Round Robin
+1 start time: 5 end time: 315 | Waiting time: 0
+2 start time: 315 end time: 480 | Waiting time: 304
+3 start time: 480 end time: 507 | Waiting time: 468
+4 start time: 507 end time: 523 | Waiting time: 485
+5 start time: 523 end time: 757 | Waiting time: 499
+6 start time: 757 end time: 1073 | Waiting time: 719
+7 start time: 1073 end time: 1196 | Waiting time: 1031
+8 start time: 1196 end time: 1530 | Waiting time: 1154
+9 start time: 1530 end time: 1645 | Waiting time: 1484
+10 start time: 1645 end time: 1962 | Waiting time: 1594
+11 start time: 1962 end time: 1973 | Waiting time: 1894
+12 start time: 1973 end time: 2227 | Waiting time: 1885
+13 start time: 2227 end time: 2238 | Waiting time: 2138
+14 start time: 2238 end time: 2246 | Waiting time: 2139
+15 start time: 2246 end time: 2553 | Waiting time: 2138
+16 start time: 2553 end time: 2625 | Waiting time: 2441
+17 start time: 2625 end time: 3019 | Waiting time: 2497
+18 start time: 3019 end time: 3266 | Waiting time: 2887
+19 start time: 3266 end time: 3525 | Waiting time: 3131
+20 start time: 3525 end time: 3771 | Waiting time: 3383
+21 start time: 3771 end time: 4152 | Waiting time: 3629
+22 start time: 4152 end time: 4378 | Waiting time: 4004
+23 start time: 4378 end time: 4490 | Waiting time: 4226
+24 start time: 4490 end time: 4847 | Waiting time: 4338
+25 start time: 4847 end time: 5223 | Waiting time: 4692
+26 start time: 5223 end time: 5307 | Waiting time: 5061
+27 start time: 5307 end time: 5607 | Waiting time: 5139
+28 start time: 5607 end time: 5809 | Waiting time: 5419
+29 start time: 5809 end time: 5989 | Waiting time: 5619
+30 start time: 5989 end time: 6165 | Waiting time: 5796
+31 start time: 6165 end time: 6382 | Waiting time: 5970
+32 start time: 6382 end time: 6679 | Waiting time: 6175
+33 start time: 6679 end time: 6932 | Waiting time: 6460
+34 start time: 6932 end time: 7116 | Waiting time: 6712
+35 start time: 7116 end time: 7145 | Waiting time: 6893
+36 start time: 7145 end time: 7410 | Waiting time: 6922
+37 start time: 7410 end time: 7660 | Waiting time: 7184
+38 start time: 7660 end time: 7688 | Waiting time: 7432
+39 start time: 7688 end time: 8018 | Waiting time: 7460
+40 start time: 8018 end time: 8084 | Waiting time: 7786
+41 start time: 8084 end time: 8195 | Waiting time: 7848
+42 start time: 8195 end time: 8411 | Waiting time: 7959
+43 start time: 8411 end time: 8677 | Waiting time: 8151
+44 start time: 8677 end time: 8717 | Waiting time: 8405
+45 start time: 8717 end time: 9053 | Waiting time: 8442
+46 start time: 9053 end time: 9200 | Waiting time: 8772
+47 start time: 9200 end time: 9375 | Waiting time: 8908
+48 start time: 9375 end time: 9408 | Waiting time: 9076
+49 start time: 9408 end time: 9530 | Waiting time: 9107
+50 start time: 9530 end time: 9634 | Waiting time: 9228
+51 start time: 9634 end time: 9744 | Waiting time: 9322
+52 start time: 9744 end time: 9758 | Waiting time: 9427
+53 start time: 9758 end time: 10028 | Waiting time: 9439
+54 start time: 10028 end time: 10317 | Waiting time: 9708
+55 start time: 10317 end time: 10692 | Waiting time: 9994
+56 start time: 10692 end time: 10770 | Waiting time: 10368
+57 start time: 10770 end time: 10923 | Waiting time: 10444
+58 start time: 10923 end time: 11019 | Waiting time: 10589
+59 start time: 11019 end time: 11058 | Waiting time: 10665
+60 start time: 11058 end time: 11220 | Waiting time: 10704
+61 start time: 11220 end time: 11429 | Waiting time: 10860
+62 start time: 11429 end time: 11706 | Waiting time: 11052
+63 start time: 11706 end time: 11930 | Waiting time: 11324
+64 start time: 11930 end time: 12033 | Waiting time: 11540
+65 start time: 12033 end time: 12179 | Waiting time: 11643
+Average waiting time: 6033.276923076923

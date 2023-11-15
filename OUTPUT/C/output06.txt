@@ -1,0 +1,38 @@
+CPU Scheduling Algorithm
+0 First Come First Serve
+1 Shortest Job First
+2 Shortest Remaining Time First
+3 Round Robin
+1 start time: 2 end time: 27 | Waiting time: 0
+2 start time: 27 end time: 101 | Waiting time: 25
+3 start time: 101 end time: 188 | Waiting time: 91
+4 start time: 188 end time: 194 | Waiting time: 177
+5 start time: 194 end time: 201 | Waiting time: 181
+6 start time: 201 end time: 208 | Waiting time: 176
+7 start time: 208 end time: 267 | Waiting time: 168
+8 start time: 267 end time: 443 | Waiting time: 226
+9 start time: 443 end time: 619 | Waiting time: 395
+10 start time: 619 end time: 776 | Waiting time: 550
+11 start time: 776 end time: 790 | Waiting time: 702
+12 start time: 790 end time: 869 | Waiting time: 688
+13 start time: 869 end time: 1047 | Waiting time: 764
+14 start time: 1047 end time: 1197 | Waiting time: 934
+15 start time: 1197 end time: 1285 | Waiting time: 1078
+16 start time: 1285 end time: 1445 | Waiting time: 1166
+17 start time: 1445 end time: 1446 | Waiting time: 1318
+18 start time: 1446 end time: 1556 | Waiting time: 1315
+19 start time: 1556 end time: 1675 | Waiting time: 1419
+20 start time: 1675 end time: 1712 | Waiting time: 1535
+21 start time: 1712 end time: 1884 | Waiting time: 1563
+22 start time: 1884 end time: 2043 | Waiting time: 1733
+23 start time: 2043 end time: 2073 | Waiting time: 1889
+24 start time: 2073 end time: 2219 | Waiting time: 1918
+25 start time: 2219 end time: 2261 | Waiting time: 2063
+26 start time: 2261 end time: 2378 | Waiting time: 2104
+27 start time: 2378 end time: 2474 | Waiting time: 2205
+28 start time: 2474 end time: 2657 | Waiting time: 2300
+29 start time: 2657 end time: 2808 | Waiting time: 2482
+30 start time: 2808 end time: 2915 | Waiting time: 2630
+31 start time: 2915 end time: 2960 | Waiting time: 2735
+32 start time: 2960 end time: 2996 | Waiting time: 2779
+Average waiting time: 1228.40625
