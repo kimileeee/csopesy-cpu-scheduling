@@ -15,8 +15,14 @@ def process_file(input_file_path, output_file_path):
         # Extract X, Y, Z values
         x, y, z = map(int, input_file.readline().split())
 
+        # Seek back to the beginning of the file
+        input_file.seek(0)
+
+        # Skip the first line
+        input_file.readline()
+
         # Extract arrival times and burst times
-        lines = input_file.readlines()[1:]
+        lines = input_file.readlines()
         data = [line.split()[1:] for line in lines]
         arrival_times = [int(item[0]) for item in data]
         burst_times = [int(item[1]) for item in data]
